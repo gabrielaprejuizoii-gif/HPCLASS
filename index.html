@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hogwarts English Class – Rayanne</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14102b;--bg2:#1f1842;--ink:#f1e8cf;--card:#f3e9cc;--cink:#2a2017;--gold:#d4a72c;--red:#8c2433;--green:#1f5a3f;--line:#4a3f7a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#efe4c6;--bg2:#e4d6af;--ink:#241c3d;--card:#fffaf0;--cink:#2a2017;--line:#b79b4a;color-scheme:light}}
+:root[data-theme="dark"]{--bg:#14102b;--bg2:#1f1842;--ink:#f1e8cf;--card:#f3e9cc;--line:#4a3f7a}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:19px/1.6 "EB Garamond",Georgia,serif}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(2rem,6vw,3.6rem);color:var(--gold)}
+h2{font-size:clamp(1.5rem,4vw,2.2rem);color:var(--gold)}
+h3{font-size:1.15rem}
+body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg2);border-bottom:2px solid var(--gold);display:flex;gap:.2rem;align-items:center;padding:.4rem .7rem;overflow-x:auto;white-space:nowrap;font-size:.95rem}
+nav a{color:var(--ink);text-decoration:none;padding:.3rem .6rem;border-radius:99px}
+nav a:hover,nav a:focus-visible{background:var(--gold);color:#14102b;outline:none}
+nav button{margin-left:auto}
+button{font:inherit;cursor:pointer;border:2px solid var(--gold);background:transparent;color:var(--ink);border-radius:99px;padding:.3rem .9rem}
+button:hover,button:focus-visible{background:var(--gold);color:#14102b;outline:none}
+.hero{text-align:center;padding:3rem 1.2rem 2rem;background:radial-gradient(circle at 50% 0,#3a2c78 0,var(--bg) 70%)}
+.hero .big{font-size:4rem;animation:fl 4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px) rotate(-4deg)}}
+@media (prefers-reduced-motion:reduce){.hero .big{animation:none}html{scroll-behavior:auto}}
+.letter{max-width:640px;margin:1.5rem auto;background:var(--card);color:var(--cink);border-radius:6px;padding:1.5rem 1.7rem;text-align:left;border:3px double var(--red);position:relative}
+.letter:after{content:"HOGWARTS";position:absolute;right:-12px;bottom:-14px;background:var(--red);color:#f1e8cf;font:700 .75rem Cinzel;padding:.5rem .6rem;border-radius:50%;transform:rotate(-12deg)}
+section{max-width:960px;margin:0 auto;padding:2.5rem 1.2rem;border-top:1px dashed var(--line)}
+section>.sub{font-style:italic;opacity:.85;margin-top:-.3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.card,.act{background:var(--card);color:var(--cink);border-radius:10px;padding:1rem 1.2rem;border-left:6px solid var(--gold)}
+.act{margin:1.2rem 0;border-left-color:var(--red)}
+.act h3{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+.time{font:600 .85rem "EB Garamond";background:var(--green);color:#f1e8cf;border-radius:99px;padding:.1rem .7rem;align-self:flex-start}
+.goal{font-style:italic;margin:.2rem 0}
+.tn{background:#e3d3a2;border:1px dashed var(--red);border-radius:8px;padding:.6rem .9rem;margin:.6rem 0;font-size:.95rem;color:var(--cink)}
+.tn:before{content:"📜 Para a professora: ";font-weight:600}
+.say{background:#2a2050;color:#f1e8cf;border-radius:8px;padding:.6rem .9rem;margin:.6rem 0}
+.say:before{content:"🗣️ ";}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}
+.chip{background:var(--bg2);color:var(--ink);border:1px solid var(--gold);border-radius:99px;padding:.15rem .8rem;font-style:italic}
+.rule .em{font-size:2rem}
+.rule b{color:var(--red)}
+.vw{display:flex;gap:.7rem;align-items:flex-start;padding:.5rem 0;border-bottom:1px dotted #b79b4a}
+.vw .em{font-size:1.9rem;line-height:1}
+.vw small{display:block;opacity:.85}
+.vw.c{opacity:.8}
+.vw .star{color:var(--red);font-size:.8rem}
+.fill{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin:.5rem 0}
+input[type=text]{font:inherit;border:2px solid var(--gold);border-radius:8px;padding:.15rem .5rem;width:10.5rem;background:#fffaf0;color:#2a2017}
+input.ok{border-color:#1f7a4f;background:#d6f0dc}
+input.no{border-color:var(--red);background:#f6d9d9}
+ol.tr{padding-left:1.3rem}
+ol.tr li{margin:.6rem 0}
+.key{display:none;background:#e9f3df;border:2px solid var(--green);border-radius:8px;padding:.6rem 1rem;margin-top:.6rem;color:var(--cink)}
+body.t .key{display:block}
+.fc{perspective:900px;height:190px;cursor:pointer}
+.fc>div{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip>div{transform:rotateY(180deg)}
+.fc .f,.fc .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:.8rem;border:2px solid var(--gold)}
+.fc .f{background:var(--red);color:#f1e8cf;font:700 1.25rem Cinzel}
+.fc .f span{font-size:2.3rem}
+.fc .b{background:var(--card);color:var(--cink);transform:rotateY(180deg);font-size:.98rem}
+.fcw{display:flex;flex-direction:column;gap:.3rem}
+.fcw .btns{display:flex;gap:.3rem;justify-content:center}
+.fcw .btns button{font-size:.8rem;padding:.1rem .5rem}
+.fcw .st{text-align:center;font-size:.85rem;min-height:1.2em;color:var(--gold)}
+textarea{width:100%;min-height:120px;font:inherit;border-radius:8px;border:2px solid var(--gold);padding:.6rem;background:#fffaf0;color:#2a2017}
+.houses{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.6rem;margin:.8rem 0}
+.houses button{border-radius:12px;padding:.6rem;border-width:3px;color:#fff;font-weight:600}
+.houses .g{background:#7f0909;border-color:#d4a72c}.houses .s{background:#1a472a;border-color:#aaa}.houses .r{background:#0e1a40;border-color:#b87333}.houses .h{background:#5d4a00;border-color:#222}
+#houseOut{font-style:italic;min-height:1.5em}
+footer{text-align:center;padding:2rem 1rem 3rem;opacity:.8}
+</style>
+</head>
+<body>
+<nav>
+<a href="#gate">🚂 Plataforma</a><a href="#alley">🦉 Vocabulário</a><a href="#potions">🧪 Gramática</a><a href="#hall">🏰 Speaking</a><a href="#home">📜 Homework</a><a href="#check">✅ Checklist</a>
+<button id="tbtn" aria-pressed="false">🔮 Gabarito: off</button>
+</nav>
+
+<header class="hero" id="top">
+<div class="big">🦉</div>
+<h1>⚡ Hogwarts English Class ⚡</h1>
+<p><i>“Beyond the iron gates, the candles are floating, the portraits are watching, and something old is whispering your name…”</i> 🕯️🌙</p>
+<div class="letter">
+<p><b>Dear Rayanne,</b></p>
+<p>We are happy to tell you that you have a place at Hogwarts School of Witchcraft and Wizardry. 🏰 Today you will visit the castle, meet witches and wizards, and compare everything you see. Please bring your wand 🪄 and your imagination. <i>You don’t need perfect English. You only need to try!</i></p>
+<p>Yours sincerely,<br><i>Professor McGonagall</i> 🐈‍⬛</p>
+</div>
+<p>👇 Turn the page… and let the magic begin ✨</p>
+</header>
+
+<section id="gate">
+<h2>🚂 Platform 9¾ — Warm-up & Golden Rules</h2>
+<p class="sub">⏱ 8 min · Objetivo: baixar a guarda, ativar o inglês e combinar as regras da aula.</p>
+<div class="grid">
+<div class="card"><h3>⭐ The Golden Rules</h3><p>1. Message first, grammar second.<br>2. Mistakes are magic: they help us learn. 🪄<br>3. If you don’t know a word, explain it!<br>4. Think out loud. Silence is okay, but try! 🤫</p></div>
+<div class="card"><h3>🧠 Magic phrases (keep them on the table!)</h3><div class="chips"><span class="chip">Let me think…</span><span class="chip">I think…</span><span class="chip">I mean…</span><span class="chip">It’s similar to…</span><span class="chip">It’s something that…</span><span class="chip">I don’t remember the word, but…</span><span class="chip">How can I explain this?</span></div></div>
+</div>
+<div class="act">
+<h3>🧳 Pack your trunk <span class="time">⏱ 5 min</span></h3>
+<p class="goal">🎯 Fluência: responder oralmente com respostas curtas e espontâneas.</p>
+<p>Rayanne, answer out loud: Do you know Harry Potter? Who is your favourite character? What is your favourite magical thing? If you had a wand 🪄, what would you do first?</p>
+<div class="say">Expected: “My favourite is Hermione. I think she is… I mean… she is smart.” / “I would fly. It’s something that… I like.”</div>
+<p class="tn" style="display:block">Aceite qualquer resposta, mesmo com erros. Anote 2–3 erros relevantes num papel (sem interromper) e use no “Feedback Time”. Se ela travar, ofereça a frase-chave (“Let me think…”) e espere 5 segundos antes de ajudar.</p>
+</div>
+</section>
+
+<section id="alley">
+<h2>🦉 Diagon Alley — The Wizarding World Vocabulary</h2>
+<p class="sub">⏱ 17 min · ⭐ = palavras essenciais (18) · sem ⭐ = bônus. Mostre fotos/cenas do filme ou imagens reais de cada item; os emojis são o apoio visual rápido.</p>
+<div id="vocab"></div>
+</section>
+
+<section id="potions">
+<h2>🧪 Potions Class — Comparative Adjectives</h2>
+<p class="sub">⏱ 22 min · Objetivo: comparar pessoas, lugares, objetos e criaturas do universo HP.</p>
+<div class="act"><h3>🔍 Notice first! <span class="time">⏱ 2 min</span></h3>
+<p>Look at the pictures: 🐉 and 🦉. Which one is bigger? Say it in your own words. Then listen: <i>“A dragon is bigger than an owl.”</i> What changed? What word comes after?</p>
+<p class="tn" style="display:block">Deixe ela formular a regra antes de você explicar (<i>-er + than</i>). Se ela responder “dragon big”, apenas repita corretamente: “Yes! The dragon is bigger than the owl.”</p></div>
+<h3>📖 The 6 spells of comparison</h3>
+<div class="grid" id="rules"></div>
+<div class="act"><h3>⚗️ Brew the right word <span class="time">⏱ 5 min</span></h3>
+<p class="goal">🎯 Prática controlada. Rayanne diz a frase em voz alta e depois confere.</p>
+<div id="practice"></div>
+<button id="chk">✨ Check my potion</button> <span id="chkOut"></span></div>
+
+<div class="act"><h3>🪶 Translate the spell (PT → EN) <span class="time">⏱ 6 min</span></h3>
+<p class="goal">🎯 Construir frases sozinha, da mais simples à mais complexa.</p>
+<ol class="tr" id="trans"></ol>
+<p class="tn" style="display:block">Peça que diga em voz alta primeiro, depois escreva. Pode tentar de novo quantas vezes quiser. Gabarito: use o botão “🔮 Gabarito” no topo.</p>
+</div>
+
+<div class="act"><h3>🧙 Who is more…? <span class="time">⏱ 5 min · Speaking</span></h3>
+<p class="goal">🎯 Produzir comparativos próprios (fluência).</p>
+<p>Compare out loud (at least 2 sentences each): Harry 🆚 Ron · Hogwarts 🏰 🆚 your house 🏠 · A broomstick 🧹 🆚 a car 🚗 · A ghost 👻 🆚 a dragon 🐉 · Potions 🧪 🆚 Flying lessons 🧹.</p>
+<div class="say">Expected: “Hogwarts is bigger than my house. I think it’s more beautiful.” / “A ghost is… I mean… less dangerous than a dragon.”</div>
+<p class="tn" style="display:block">Variação: “Who is more brave: Harry or Neville? Why?” Dê 20–30s por item. Meta: ela fala por períodos cada vez mais longos.</p></div>
+</section>
+
+<section id="hall">
+<h2>🏰 The Great Hall — Speaking Adventures</h2>
+<p class="sub">⏱ 13 min · Escolha 3–4 desafios conforme a energia da aluna.</p>
+
+<div class="act"><h3>🎩 Choose your Hogwarts house <span class="time">⏱ 4 min</span></h3>
+<p class="goal">🎯 Decidir e justificar com comparativos.</p>
+<p>The Sorting Hat is confused! Click a house, then tell me <b>why</b>. Use: “I think I’m more … than …”.</p>
+<div class="houses"><button class="g" data-h="Gryffindor 🦁 is more brave than the other houses. Are you brave?">🦁 Gryffindor</button><button class="s" data-h="Slytherin 🐍 is more ambitious than the other houses. Are you ambitious?">🐍 Slytherin</button><button class="r" data-h="Ravenclaw 🦅 is more creative than the other houses. Are you creative?">🦅 Ravenclaw</button><button class="h" data-h="Hufflepuff 🦡 is kinder than the other houses. Are you kind?">🦡 Hufflepuff</button></div>
+<p id="houseOut"></p>
+<div class="say">Expected: “I choose Ravenclaw because I think I’m more… I mean, I like books.”</div></div>
+
+<div class="act"><h3>🔮 Guess the character / Magical object challenge <span class="time">⏱ 4 min</span></h3>
+<p class="goal">🎯 Descrever sem dizer a palavra (circunlocução).</p>
+<p>Pick a secret card. Explain it <b>without saying the word</b>. Your teacher guesses!</p>
+<div class="chips"><span class="chip">🧹 broomstick</span><span class="chip">🧪 potion</span><span class="chip">🎩 Sorting Hat</span><span class="chip">🧙 Dumbledore</span><span class="chip">🦉 Hedwig</span><span class="chip">👻 Nearly Headless Nick</span></div>
+<div class="say">Expected: “It’s something that you use to fly. It’s similar to a… I don’t remember the word, but you sit on it.”</div>
+<p class="tn" style="display:block">Troque de papel: depois a professora descreve e Rayanne adivinha (escuta). Se ela esquecer a palavra, celebre: “That’s exactly the skill!”</p></div>
+
+<div class="act"><h3>🐉 Would you rather…? <span class="time">⏱ 3 min</span></h3>
+<p class="goal">🎯 Opinar, comparar e explicar motivos.</p>
+<p>Would you rather… have a pet <b>owl 🦉 or a dragon 🐉</b>? · fly on a <b>broomstick 🧹 or</b> be <b>invisible 🧥</b>? · live in a <b>castle 🏰 or</b> a <b>forest 🌲</b>? · be a <b>witch/wizard or</b> a <b>Muggle</b>?</p>
+<div class="say">Expected: “I would rather have an owl because it’s cuter / easier than a dragon.”</div></div>
+
+<div class="act"><h3>🪄 Mini roleplay: Ollivanders Wand Shop <span class="time">⏱ 4 min</span></h3>
+<p class="goal">🎯 Interação espontânea em situação real.</p>
+<p>You are a new student 🎒. The teacher is Mr Ollivander. Find your wand! Ask: “Can I try this wand?” “Is it bigger/better than…?” “How does it work?”</p>
+<div class="say">Expected: “Hello! I need a wand, please.” / “This wand is longer than the other one.” / “I like it. I think it’s perfect.”</div>
+<p class="tn" style="display:block">Professora fala devagar, faz perguntas abertas (“What colour is it? Is it heavier than the first one?”). Não corrija durante o diálogo.</p></div>
+
+<div class="act" style="border-left-color:var(--green)"><h3>🕯️ Feedback Time — The Golden Snitch of Mistakes <span class="time">⏱ 3 min</span></h3>
+<p>Aqui a professora apresenta o que anotou, sempre começando pelo que foi ótimo.</p>
+<div class="grid"><div class="card"><b>🌟 Great!</b><br>2 coisas que ela disse muito bem (frases ou estratégias).</div><div class="card"><b>🔧 Fix it</b><br>2–3 erros relevantes: ela mesma reformula (“Can you say it again?”).</div><div class="card"><b>💡 New word</b><br>1–2 palavras que ela precisou e não tinha.</div></div></div>
+</section>
+
+<section id="home">
+<h2>📜 Your Magical Homework</h2>
+<p class="sub">Part 1: Flashcards · Part 2: Writing · Part 3: Speaking</p>
+<h3>🃏 Part 1 — Vocabulary Flashcards</h3>
+<p>Click to flip. Say the word, then the definition, then your own sentence! Press <b>Hard</b> (review tomorrow) or <b>Easy</b> (review in 3 days, then 7 days). Review Hard cards first. 🔁</p>
+<div class="grid" id="cards" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))"></div>
+<div class="act"><h3>✍️ Part 2 — Writing Challenge</h3>
+<p>Write 6–8 sentences comparing characters, places or objects from Harry Potter. Use <b>at least 5 comparative adjectives</b> (e.g. taller, bigger, more dangerous, better). Don’t use a translator!</p>
+<textarea placeholder="Hogwarts is bigger than…"></textarea>
+<p class="tn" style="display:block">Exemplo: “Hagrid is taller than Harry. A dragon is more dangerous than an owl. The library is quieter than the Great Hall. Potions class is harder than Charms for Neville. Hogwarts is better than the Dursleys’ house.” Corrija com cores: verde = ótimo, amarelo = revisar.</p></div>
+<div class="act"><h3>🎙️ Part 3 — Speaking Challenge</h3>
+<p>Record a voice message of <b>1–2 minutes</b> comparing two characters or magical things (e.g. Harry 🆚 Draco, owl 🆚 broomstick). <b>Don’t write the whole text first!</b> Use: “Let me think…”, “I mean…”, “It’s similar to…”. If you make a mistake, keep going. 🌊</p>
+<p class="tn" style="display:block">Feedback no próximo encontro: primeiro conteúdo/coragem, depois 2 pontos de língua. Critério de sucesso: ela falou o tempo todo sem parar para perfeição.</p></div>
+</section>
+
+<section id="check">
+<h2>✅ Teacher Checklist</h2>
+<p class="sub">Marque antes de aplicar a aula.</p>
+<div class="card"><label><input type="checkbox"> Nível A2 respeitado (frases curtas, definições simples)</label><br><label><input type="checkbox"> Harry Potter é o ambiente, não decoração</label><br><label><input type="checkbox"> Vocabulário contextualizado + prática oral</label><br><label><input type="checkbox"> Regras de comparativos + exemplos + prática</label><br><label><input type="checkbox"> 8 frases PT→EN com gabarito separado</label><br><label><input type="checkbox"> Speaking em toda a aula, feedback só no final</label><br><label><input type="checkbox"> Homework com flashcards, writing e speaking</label><br><label><input type="checkbox"> Imagens reais separadas (castelo, varinha, dragão, etc.)</label></div>
+<p class="tn" style="display:block;margin-top:1rem">Sugestão de tempo total: Plataforma 8 + Vocabulário 17 + Gramática 22 + Great Hall 13 = 60 min. Se faltar tempo, corte “Would you rather” ou o roleplay.</p>
+</section>
+<footer>⚡ Mischief managed. 🪄 ✨ 🦉 🧙‍♀️ 🏰</footer>
+
+<script>
+const V=[
+{g:"🧙 Characters & People — Who is in the story?",act:"Show 4 character pictures. Rayanne says who they are: “Hermione is a witch. Hagrid is a… wizard? I think he is.”",items:[
+["🧙‍♀️","Witch","A woman who can do magic.","Hermione is a very clever witch.",1],["🧙","Wizard","A man who can do magic.","Dumbledore is a famous wizard.",1],["🧑","Muggle","A person without magic.","Harry’s uncle is a Muggle.",1],["👩‍🏫","Professor","A teacher at Hogwarts.","Professor McGonagall is strict.",1],["🎒","Student","A person who learns at school.","Harry is a student at Hogwarts.",0],["🤝","Friend","A person you like and trust.","Ron is Harry’s best friend.",0],["⚔️","Enemy","A person who is against you.","Draco is Harry’s enemy.",0]]},
+{g:"🪄 Magical Objects — What can you do with it?",act:"“Magical object challenge”: pick a card and explain what it does, without the word. “It’s something that you use to…”",items:[
+["🪄","Wand","A magic stick for spells.","Harry uses his wand to cast a spell.",1],["🧹","Broomstick","A broom that wizards use to fly.","A broomstick is faster than walking.",1],["✨","Spell","Magic words that make things happen.","This spell is difficult.",1],["🧪","Potion","A magic drink.","Snape teaches us about potions.",1],["🍲","Cauldron","A big pot for making potions.","The cauldron is very hot.",1],["🧥","Cloak","A long coat. Harry’s is invisible!","The invisible cloak is special.",1],["🎩","Sorting Hat","A hat that chooses your house.","The Sorting Hat is talking!",1],["🔮","Crystal ball","A glass ball that shows the future.","The teacher looks at the crystal ball.",0]]},
+{g:"🏰 Magical Places — Where are we?",act:"“Describe and guess”: the teacher shows a picture; Rayanne says where it is and what you can do there. “It’s a place where…”",items:[
+["🏰","Castle","A big old building.","Hogwarts is a huge castle.",1],["🎓","School of witchcraft and wizardry","A school where students learn magic.","Harry goes to the School of Witchcraft and Wizardry.",1],["📚","Library","A place with many books.","Hermione studies in the library.",1],["🌲","Forest","A big area with many trees.","The Forbidden Forest is dark.",1],["🕳️","Dungeon","A dark room under a castle.","The potions class is in the dungeon.",0],["🛋️","Common room","A room where students relax.","The Gryffindor common room is warm.",0]]},
+{g:"🐉 Magical Creatures — Who lives here?",act:"“Would you rather have…?” — Rayanne chooses a creature and gives one reason.",items:[
+["🦉","Owl","A bird that flies at night. In HP it brings letters.","Hedwig is Harry’s owl.",1],["🐉","Dragon","A giant animal with fire.","A dragon is dangerous.",1],["👻","Ghost","The spirit of a dead person.","Hogwarts has many ghosts.",1],["🦄","Magical creature","An animal with magic powers.","A unicorn is a magical creature.",0]]}];
+const vb=document.getElementById("vocab"),cards=document.getElementById("cards");
+V.forEach(grp=>{let h=`<div class="act" style="border-left-color:var(--gold)"><h3>${grp.g} <span class="time">⏱ 4 min</span></h3><div class="grid">`;
+grp.items.forEach(i=>{h+=`<div class="vw ${i[4]?"":"c"}"><span class="em">${i[0]}</span><div><b>${i[1]}</b> ${i[4]?'<span class="star">⭐</span>':""}<small>${i[2]}</small><small><i>“${i[3]}”</i></small></div></div>`;
+cards.insertAdjacentHTML("beforeend",`<div class="fcw"><div class="fc" tabindex="0" role="button" aria-label="Flip ${i[1]}"><div><div class="f"><span>${i[0]}</span>${i[1]}</div><div class="b"><b>${i[2]}</b><br><i>“${i[3]}”</i></div></div></div><div class="btns"><button>😅 Hard</button><button>😎 Easy</button></div><div class="st"></div></div>`)});
+h+=`</div><p class="goal">🎯 Speaking activity: ${grp.act}</p><p class="tn" style="display:block">Mostre a imagem → pergunte “What is this?” → ela tenta explicar em inglês antes de você dar a palavra. Peça uma frase própria com cada palavra essencial.</p></div>`;vb.insertAdjacentHTML("beforeend",h)});
+document.querySelectorAll(".fc").forEach(c=>{c.onclick=()=>c.classList.toggle("flip");c.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();c.classList.toggle("flip")}}});
+document.querySelectorAll(".fcw").forEach(w=>{const b=w.querySelectorAll("button"),s=w.querySelector(".st");b[0].onclick=()=>s.textContent="📅 Review tomorrow";b[1].onclick=()=>s.textContent="📅 Review in 3 days"});
+const R=[["🐘","Short adjectives","+ <b>-er</b> + than","Harry is <b>taller</b> than Ron.<br>Hogwarts is <b>older</b> than many schools.<br>A dragon is <b>bigger</b>… (see rule 3)"],["🪄","Ending in -e","+ <b>-r</b> + than","This wand is <b>larger</b> than that one."],["🔥","Consonant–vowel–consonant","double the last letter + <b>-er</b>","big → <b>bigger</b><br>hot → <b>hotter</b>"],["😊","Ending in -y","-y becomes <b>-ier</b> + than","easy → <b>easier</b><br>happy → <b>happier</b><br>Charms is <b>easier</b> than Potions."],["🧠","Long adjectives","<b>more</b> + adjective + than","Hermione is <b>more intelligent</b> than many students.<br>This spell is <b>more difficult</b> than that one."],["🌀","Irregular","change the whole word!","good → <b>better</b><br>bad → <b>worse</b><br>far → <b>farther / further</b>"]];
+document.getElementById("rules").innerHTML=R.map((r,i)=>`<div class="card rule"><div class="em">${r[0]}</div><h3>${i+1}. ${r[1]}</h3><p>${r[2]}</p><p><i>${r[3]}</i></p></div>`).join("")+`<div class="card"><div class="em">🦅</div><h3>More examples</h3><p><i>A broomstick is faster than walking.<br>A dragon is more dangerous than an owl.<br>Hermione is more organized than Ron.<br>Hogwarts is bigger than the Dursleys’ house.</i></p></div>`;
+const P=[["A dragon is","big","bigger","than an owl."],["This wand is","large","larger","than that one."],["The dragon’s fire is","hot","hotter","than a candle."],["Charms is","easy","easier","than Potions."],["Hermione is","intelligent","more intelligent","than Ron."],["Quidditch is","good","better","than homework."],["Voldemort is","bad","worse","than Draco."],["An owl is","fast","faster","than a toad."]];
+document.getElementById("practice").innerHTML=P.map(p=>`<div class="fill">${p[0]} <input type="text" data-a="${p[2]}" placeholder="(${p[1]})" aria-label="${p[1]}"> ${p[3]}</div>`).join("");
+document.getElementById("chk").onclick=()=>{let ok=0;document.querySelectorAll("#practice input").forEach(i=>{const g=i.value.trim().toLowerCase()===i.dataset.a;i.className=g?"ok":"no";if(g)ok++});document.getElementById("chkOut").textContent=ok===P.length?"🏆 10 points to Gryffindor!":ok+"/"+P.length+" — try the red ones again! 🪄"};
+const T=[["Harry é mais baixo que Ron.","Harry is shorter than Ron.","regra 1"],["A coruja é mais rápida que o sapo.","The owl is faster than the toad.","regra 1"],["Esta varinha é maior que aquela.","This wand is larger than that one.","regra 2"],["O caldeirão está mais quente que a sala.","The cauldron is hotter than the room.","regra 3"],["A aula de Feitiços é mais fácil que a aula de Poções.","Charms class is easier than Potions class.","regra 4"],["A Floresta Proibida é mais perigosa que o castelo.","The Forbidden Forest is more dangerous than the castle.","regra 5"],["Hermione é mais inteligente e mais organizada que Ron.","Hermione is more intelligent and more organized than Ron.","regra 5"],["Hogwarts é melhor que a casa dos Dursley, mas a masmorra é pior que a biblioteca.","Hogwarts is better than the Dursleys’ house, but the dungeon is worse than the library.","regra 6"]];
+document.getElementById("trans").innerHTML=T.map(t=>`<li>${t[0]}<div class="key">✅ <b>${t[1]}</b> <small>(${t[2]})</small></div></li>`).join("");
+document.querySelectorAll(".houses button").forEach(b=>b.onclick=()=>document.getElementById("houseOut").textContent="🎩 Hmm… "+b.dataset.h);
+const tb=document.getElementById("tbtn");tb.onclick=()=>{const on=document.body.classList.toggle("t");tb.textContent="🔮 Gabarito: "+(on?"on":"off");tb.setAttribute("aria-pressed",on)};
+</script>
+</body>
+</html>
